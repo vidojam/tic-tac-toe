@@ -1,13 +1,21 @@
-import { useState } from 'react'
+import React, { useState } from 'react';
+import Cell from './components/cells'; // Adjust the import path based on your file structure
 
 const App = () => {
-  const [cells, setCells] = useState(["", "", "", "", "", "", "", "", ""])
+  const [cells, setCells] = useState(["", "", "", "", "", "", "", "", ""]);
+  const [go, setGo] = useState("circle");
+  const [winningMessage, setWinningMessage] = useState(null);
+
+  const message = "it is now " + go + "'s go";
+
   return (
     <div className="app">
       <div className="gameboard">
-        {cells.map(cell => <Cell/>}
+        {cells.map((cell, index) => (
+          <Cell key={index} id={index} cell={cell} /> // Assuming Cell component accepts `cell` prop
+        ))}
       </div>
-
+      <p>{ winningMessage || message } </p>
     </div>
   );
 }
