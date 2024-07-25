@@ -12,12 +12,20 @@ const App = () => {
     <div className="app">
       <div className="gameboard">
         {cells.map((cell, index) => (
-          <Cell key={index} id={index} cell={cell} /> // Assuming Cell component accepts `cell` prop
+          <Cell 
+          key={index} 
+          id={index} 
+          cell={cell} 
+          go={go} // Assuming Cell component accepts `cell` prop
+          setGo={setGo}
+          cells = {cells}
+          setCells = {setCells}/>
         ))}
       </div>
       <p>{ winningMessage || message } </p>
     </div>
   );
 }
+
 
 export default App;

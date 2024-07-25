@@ -24,6 +24,48 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  
-  
+
 }
+
+.circle {
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  border: 15px solid blue;
+  box-sizing:border-box;
+}
+
+.cross {
+  height: 90px;
+  width: 90px;
+  border-radius: 50%;
+  position: relative;
+  transform: rotate(45deg);
+  border: 15px solid red;
+  box-sizing:border-box;
+}
+
+.cross::before, .cross::after {
+  content: '';
+  position: absolute;
+  height: 15px;
+  width: 90px;
+  background-color: red;
+}
+
+.cross::before {
+  left: 50%;
+  top: 30%;
+  height: 100%;
+  margin-left: -15%;
+  /* transform: rotate(45deg); */
+}
+
+.cross::after {
+  top: 50%;
+  height: 30%;
+  width: 100%;
+  margin-top: -15%;
+  transform: rotate(45deg);
+}
+
