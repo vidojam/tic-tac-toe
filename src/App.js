@@ -8,6 +8,7 @@ const App = () => {
 
   const message = `It is now ${go}'s turn`;
 
+  
   const checkScore = () => {
     const winningCombos = [
       [0, 1, 2],
