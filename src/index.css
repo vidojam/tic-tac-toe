@@ -37,10 +37,10 @@
 .cross {
   height: 90px;
   width: 90px;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   position: relative;
   transform: rotate(45deg);
-  border: 15px solid red;
+  /* border: 15px solid red; */
   box-sizing: border-box;
 }
 
@@ -53,18 +53,15 @@
 }
 
 .cross::before {
-  left: 50%;
-  top: 30%;
-  height: 100%;
-  margin-left: -15%;
+  left: 0;
+  width: 100px;
+  top: 37.5px; /* Adjust top position for centering */
 }
 
 .cross::after {
-  top: 50%;
-  height: 30%;
-  width: 100%;
-  margin-top: -15%;
-  transform: rotate(45deg);
+  top: 37.5px; /* Adjust top position for centering */
+  width: 100px;
+  transform: rotate(90deg);
 }
 
 .message {
